@@ -6,6 +6,26 @@ from datetime import datetime
 
 app = Flask(__name__)
 
+import sqlite3
+
+def init_db():
+    conn = sqlite3.connect("prediction_history.db")
+    cursor = conn.cursor()
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS history (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        date TEXT,
+        probability REAL,
+        risk TEXT
+    )
+    """)
+
+    conn.commit()
+    conn.close()
+
+init_db()
+
 # Load trained model and scaler
 model = joblib.load("model/best_model.pkl")
 scaler = joblib.load("model/scaler.pkl")
