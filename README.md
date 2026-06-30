@@ -122,6 +122,10 @@ The XGBoost model achieved the best performance and was selected for deployment.
 - **Karlagunta Venkata Prahladu**
 - **Andaluri Shanmukha Rao**
 
+## Updated By
+
+**D. Keerthi Priya**
+
 B.Tech CSE (AI & ML)
 
 ANITS
